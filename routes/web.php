@@ -19,6 +19,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post('/api/login', 'AuthController@login');
+
 $router->group(['prefix' => 'api'], function() use ($router){
     $router->get('/reminders','ReminderController@index');
     $router->post('/reminders','ReminderController@store');
